@@ -1,0 +1,51 @@
+{
+  "name": "Enhanced YouTube API",
+  "description": "A robust YouTube API service for fetching metadata and streaming content with proxy rotation",
+  "keywords": [
+    "python",
+    "flask",
+    "youtube",
+    "api",
+    "telegram",
+    "bot"
+  ],
+  "repository": "https://github.com/yourusername/youtube-api",
+  "success_url": "/",
+  "env": {
+    "MONGO_URI": {
+      "description": "MongoDB connection URI",
+      "value": "mongodb+srv://jaydipmore74:xCpTm5OPAfRKYnif@cluster0.5jo18.mongodb.net/youtube_api?retryWrites=true&w=majority",
+      "required": true
+    },
+    "MONGO_DB_NAME": {
+      "description": "MongoDB database name",
+      "value": "youtube_api",
+      "required": true
+    },
+    "SESSION_SECRET": {
+      "description": "Secret key for Flask sessions",
+      "generator": "secret",
+      "required": true
+    },
+    "RATE_LIMIT": {
+      "description": "Rate limit per minute",
+      "value": "60",
+      "required": false
+    },
+    "TEMP_DIR": {
+      "description": "Directory for temporary files",
+      "value": "tmp",
+      "required": false
+    },
+    "LOG_DIR": {
+      "description": "Directory for log files",
+      "value": "logs",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
